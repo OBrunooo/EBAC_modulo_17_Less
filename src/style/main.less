@@ -1,0 +1,138 @@
+@import url(maps.less);
+
+@breakepointmobile: ~ "(max-width: 767px)";
+@breakepointtablet: ~"(min-width: 768px) and (max-width: 1023px)";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden
+}
+
+body {
+    background-color:#colors[backgroundcolor];
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 60%;
+    
+    @media @breakepointmobile {
+        max-width: 80%;
+    }
+
+    @media @breakepointtablet {
+        max-width: 90%;
+    }
+}
+
+header {
+    max-width: 100%;
+    background-color: #colors[backgroundcolorheader];
+    .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top:10px ;
+        padding-bottom: 10px;
+
+        @media @breakepointmobile {
+            margin-bottom: 0px;
+            padding: 10px;
+        }
+
+        @media @breakepointtablet {
+            padding: 10px;
+        }
+
+        nav{
+            ul{
+                display: flex;
+                li{
+                    margin-left: 50px;
+                    a{
+                        color: #colors[colortext];
+                        font-size: 24px;
+                        text-decoration: none;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
+
+section {
+    .container {
+        padding-top: 20px;
+
+        h2{
+            font-size: 50px;
+            padding-bottom: 20px;
+        }
+        .products {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            column-gap: 30px;
+            padding:0%;
+
+            @media @breakepointmobile {
+                grid-template-columns: repeat(3, 1fr);
+                column-gap: 20px;
+                row-gap: 30px;
+            }
+            li {
+                img {
+                    width: 100%;
+                    border-radius: 10px;
+                }
+
+                h4 {
+                    font-size: 25px;
+                    margin: 0;
+                    @media @breakepointmobile {
+                        font-size: 15px;
+                    }
+                    @media @breakepointtablet {
+                        font-size: 18px;
+                    }
+                }
+
+                p {
+                    font-size: 18px;
+                    margin: 0;
+                    @media @breakepointmobile {
+                        font-size: 10px;
+                    }
+                    @media @breakepointtablet {
+                        font-size: 15px;
+                    }
+                }
+
+                a {
+                    font-size: 20px;
+                    color: #colors[colorlink];
+                    text-decoration: none;
+
+                    @media @breakepointmobile {
+                        font-size:10px ;
+                    }
+                    @media @breakepointtablet {
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+
+        @media @breakepointmobile {
+            padding-top: 30px;
+        }
+    }
+}
+
